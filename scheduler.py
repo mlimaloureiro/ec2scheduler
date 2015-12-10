@@ -1,6 +1,7 @@
 """This scheduler starts/stops EC2 instances using a JSON based schedule.
  
 Usage:
+  scheduler [options]
   scheduler (-h | --help)
   scheduler --version
  
@@ -13,7 +14,7 @@ Options:
 from docopt import docopt
 from ConfigParser import SafeConfigParser
 import boto.ec2
-import sys,os,json, datetime, time
+import sys, os, json, datetime, time
 
 config = SafeConfigParser()
  
@@ -22,10 +23,7 @@ def init():
     global ec2_eu
     global ec2_us
     ec2_eu = connect_from_conf('aws_eu')
-    ec2_us = connect_fromt_conf('aws_us')
-
-    print ec2_eu
-    print ec2_us
+    ec2_us = connect_from_conf('aws_us')
 
 def connect_from_conf(aws_conf):
     aws_access_key = config.get(aws_conf,'access_key','')
