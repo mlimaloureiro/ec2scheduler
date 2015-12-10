@@ -1,0 +1,9 @@
+[aws_eu]
+access_key = <your_aws_access_key>
+secret_key = <your_aws_secret_key>
+region = <your_aws_region>
+
+[aws_us]
+access_key = <your_aws_access_key>
+secret_key = <your_aws_secret_key>
+region = <your_aws_region>

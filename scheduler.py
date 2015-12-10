@@ -13,32 +13,35 @@ Options:
 from docopt import docopt
 from ConfigParser import SafeConfigParser
 import boto.ec2
-import boto.ec2.elb
-import sys,os,json,logging, datetime, time
+import sys,os,json, datetime, time
 
 config = SafeConfigParser()
-
-aws_access_key = None
-aws_secret_key = None
-aws_region = None
  
 def init():
     # Setup AWS connection
-    aws_access_key = config.get('aws','access_key','')
-    aws_secret_key = config.get('aws','secret_key','')
-    aws_region = config.get('aws', 'region','')
+    global ec2_eu
+    global ec2_us
+    ec2_eu = connect_from_conf('aws_eu')
+    ec2_us = connect_fromt_conf('aws_us')
 
-    global ec2
-    ec2 = boto.ec2.connect_to_region(
+    print ec2_eu
+    print ec2_us
+
+def connect_from_conf(aws_conf):
+    aws_access_key = config.get(aws_conf,'access_key','')
+    aws_secret_key = config.get(aws_conf,'secret_key','')
+    aws_region = config.get(aws_conf, 'region','')
+
+    return boto.ec2.connect_to_region(
             region_name = aws_region,
             aws_access_key_id = aws_access_key,
             aws_secret_access_key = aws_secret_key)
 
 def run(args):
-    config.read([args['--config'], 'aws.cfg'])
+    config.read([args['--config'], 'aws.conf'])
     init()
 
 if __name__ == "__main__":
-    args = docopt(__doc__, version='AWS 1.0.1')
+    args = docopt(__doc__, version='scheduler 1.0')
     # We have valid args, so run the program.
     run(args)
