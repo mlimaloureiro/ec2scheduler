@@ -35,7 +35,8 @@
             },
             "instance_tags": [
                 "jobs-staging",
-                "spa-jobs-staging"
+                "admin-staging",
+                "reports-staging"
             ]
         }
     ]
