@@ -1,45 +1,49 @@
 {
-    "staging": {
-        "schedule": {
-            "monday": {
-                "start": 9,
-                "stop": 19
+    "profiles": [
+        {
+            "name": "staging",
+            "region": "us-west-1",
+            "schedule": {
+                "monday": {
+                    "start": 9,
+                    "stop": 19
+                },
+                "tuesday": {
+                    "start": 9,
+                    "stop": 19
+                },
+                "wednesday": {
+                    "start": 9,
+                    "stop": 19
+                },
+                "thursday": {
+                    "start": 9,
+                    "stop": 19
+                },
+                "friday": {
+                    "start": 9,
+                    "stop": 19
+                },
+                "saturday": {
+                    "start": 9,
+                    "stop": 19
+                },
+                "sunday": {
+                    "start": 9,
+                    "stop": 19
+                }
             },
-            "tuesday": {
-                "start": 9,
-                "stop": 19
-            },
-            "wednesday": {
-                "start": 9,
-                "stop": 19
-            },
-            "thursday": {
-                "start": 9,
-                "stop": 19
-            },
-            "friday": {
-                "start": 9,
-                "stop": 19
-            },
-            "saturday": {
-                "start": 9,
-                "stop": 19
-            },
-            "sunday": {
-                "start": 9,
-                "stop": 19
-            }
-        },
-        "instance-tags": [
-            'jobs-staging',
-            'photography-staging',
-            'ap-staging',
-            'ops-staging',
-            'admin-staging',
-            'reports-staging',
-            'core-staging',
-            'spa-jobs-staging',
-            'spa-staging'
-        ]
-    }
+            "instance_tags": [
+                "jobs-staging",
+                "photography-staging",
+                "ap-staging",
+                "ops-staging",
+                "admin-staging",
+                "reports-staging",
+                "core-staging",
+                "spa-jobs-staging",
+                "spa-staging"
+            ]
+        }
+    ]
 }
