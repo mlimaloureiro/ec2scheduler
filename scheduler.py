@@ -1,10 +1,12 @@
+#!/usr/bin/env python
+
 """This scheduler starts/stops EC2 instances using a JSON based schedule.
  
 Usage:
   scheduler [options]
   scheduler (-h | --help)
   scheduler --version
- 
+
 Options:
   -c --config CONFIG     Use alternate configuration file [default: ./aws.cnf].
   -h --help              Show this screen.

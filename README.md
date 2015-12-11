@@ -64,7 +64,7 @@ You can just copy the `scheduler.json.dist` and start creating your new profiles
                 }
             },
             "instance_tags": [ // tags from the instances you want to attach this profile schedule
-                "jobs-staging",
+                "jobs-staging", // this tag should be the name of the instance tag:Name
                 "admin-staging",
                 "reports-staging"
             ]
