@@ -29,7 +29,7 @@ You can just copy the `scheduler.json.dist` and start creating your new profiles
 
 ```
 {
-    "profiles": [ // and array of profiles
+    "profiles": [ // an array of profiles
         {
             "name": "staging", // profile name
             "region": "us-west-1", // aws region
