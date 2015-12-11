@@ -44,13 +44,41 @@ def get_schedules():
 def schedule():
   for profile in schedules['profiles']:
     instances = get_instances(profile['instance_tags'], profile['region'])
-    print instances
+    start_stop_instances(instances, profile['schedule'])
+
+def start_stop_instances(instances, schedule):
+  for reservation in instances:
+    for instance in reservation.instances:
+      if instance.state == 'running' and get_desired_state(schedule) == 'stop':
+        print "should stop " + instance.id
+      elif instance.state == 'stopped' and get_desired_state(schedule) == 'start':
+        print "should start " + instance.id
+      else:
+        print "nothing to do."
+
+def get_desired_state(schedule):
+  current_hour = int(time.strftime("%H", time.gmtime()))
+  current_week_day = time.strftime("%A", time.gmtime()).lower()
+  start = schedule[current_week_day]['start']
+  stop = schedule[current_week_day]['stop']
+
+  state = 'stop'
+  if current_hour >= start and current_hour <= stop:
+    state = 'start'
+
+  return state
 
 def get_instances(instance_tags, region):
-  instances = []
-  for tag in instance_tags:
-    instances.append(ec2[region].get_all_instances(filters={"tag:Name": instance_tags}))
-  return instances
+  """ Get boto ec2 instance objects by provided tags
+
+      Args:
+        instance_tags: the tags associated with the instances
+        region: aws region
+
+      Returns:
+        An array of boto ec2 instance objects
+  """
+  return ec2[region].get_all_instances(filters={"tag:Name": instance_tags})
 
 def run(args):
     config.read([args['--config'], 'aws.conf'])

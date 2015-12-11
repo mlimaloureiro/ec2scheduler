@@ -35,14 +35,7 @@
             },
             "instance_tags": [
                 "jobs-staging",
-                "photography-staging",
-                "ap-staging",
-                "ops-staging",
-                "admin-staging",
-                "reports-staging",
-                "core-staging",
-                "spa-jobs-staging",
-                "spa-staging"
+                "spa-jobs-staging"
             ]
         }
     ]
