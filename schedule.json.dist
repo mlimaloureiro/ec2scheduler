@@ -1,7 +1,7 @@
 {
     "profiles": [
         {
-            "name": "staging",
+            "name": "profile name",
             "region": "us-west-1",
             "schedule": {
                 "monday": {
@@ -34,9 +34,7 @@
                 }
             },
             "instance_tags": [
-                "jobs-staging",
-                "admin-staging",
-                "reports-staging"
+                "example-tag"
             ]
         }
     ]
