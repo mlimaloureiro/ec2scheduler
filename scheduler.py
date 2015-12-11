@@ -19,6 +19,16 @@ import sys, os, json, datetime, time
 config = SafeConfigParser()
 ec2 = {}
 
+def run(args):
+  """ Run the script
+
+      Args:
+        args: CLI arguments.
+  """
+  config.read([args['--config'], 'aws.conf'])
+  init(args)
+  schedule()
+
 def init(args):
   """ Setup initial configuration and connections
 
@@ -61,7 +71,6 @@ def get_schedules():
 
 def schedule():
   """ Check all schedule configurations to start and stop instances """
-
   for profile in schedules['profiles']:
     instances = get_instances(profile['instance_tags'], profile['region'])
     start_stop_instances(instances, profile['schedule'])
@@ -116,16 +125,6 @@ def get_desired_state(schedule):
     state = 'start'
 
   return state
-
-def run(args):
-  """ Run the script
-
-      Args:
-        args: CLI arguments.
-  """
-  config.read([args['--config'], 'aws.conf'])
-  init(args)
-  schedule()
 
 if __name__ == "__main__":
     args = docopt(__doc__, version='scheduler 1.0')
