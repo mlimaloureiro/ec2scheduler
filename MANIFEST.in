@@ -1,0 +1,3 @@
+include uniplaces-aws-scheduler/schedule.json.dist
+include uniplaces-aws-scheduler/aws.conf.dist
+include README.md

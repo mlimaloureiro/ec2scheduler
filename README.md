@@ -4,9 +4,9 @@ The AWS Scheduler is a script that given a set of profiles schedule the uptime o
 
 ## Getting Started
 
-Install the dependencies.
+Install through pip.
 
-    pip install boto docopt
+    pip install uniplaces-aws-scheduler
 
 The initial configuration is done in the `aws.conf` file. Copy the `aws.conf.dist`
 to `aws.conf` and configure with the right credentials.
@@ -15,11 +15,7 @@ the directory from where you want to load the profiles.
 
 To run the scheduler just run
 
-    python scheduler.py
-
-If you want to use a different configuration file just run
-
-    python scheduler.py -c path/to/file
+    aws-scheduler -c path/to/file
 
 #### Profiles
 

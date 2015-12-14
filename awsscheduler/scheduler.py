@@ -128,7 +128,13 @@ def get_desired_state(schedule):
 
   return state
 
+def run_cli():
+  args = docopt(__doc__, version='scheduler 1.0')
+  # We have valid args, so run the program.
+  run(args)
+
 if __name__ == "__main__":
-    args = docopt(__doc__, version='scheduler 1.0')
-    # We have valid args, so run the program.
-    run(args)
+  args = docopt(__doc__, version='scheduler 1.0')
+  # We have valid args, so run the program.
+  run(args)
+
