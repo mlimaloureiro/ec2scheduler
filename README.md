@@ -15,7 +15,7 @@ the directory from where you want to load the profiles.
 
 To run the scheduler just run
 
-    aws-scheduler -c path/to/file
+    aws-scheduler -c path/to/config_file
 
 #### Profiles
 
