@@ -63,6 +63,9 @@ You can just copy the `scheduler.json.dist` and start creating your new profiles
                 "jobs-staging", // this tag should be the name of the instance tag:Name
                 "admin-staging",
                 "reports-staging"
+            ],
+            "elb_names": [ // add this configuration if you want to reregister this elb instances
+                "example-tag-elb-name"
             ]
         }
     ]
