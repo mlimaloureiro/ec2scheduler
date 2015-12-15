@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='uniplaces-aws-scheduler',
-      version='1.2',
+      version='1.2.1',
       description='A scheduling script for aws ec2 instances',
       url='https://github.com/uniplaces/uniplaces-aws-scheduler',
       author='mlimaloureiro',

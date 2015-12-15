@@ -34,7 +34,7 @@ def run(args):
 
   while True:
     schedule()
-    time.sleep(600)
+    time.sleep(3600)
 
 def init(args):
   """ Setup initial configuration and connections
@@ -181,12 +181,12 @@ def _get_instance_ids(instances):
   return instance_ids
 
 def run_cli():
-  args = docopt(__doc__, version='scheduler 1.2')
+  args = docopt(__doc__, version='scheduler 1.2.1')
   # We have valid args, so run the program.
   run(args)
 
 if __name__ == "__main__":
-  args = docopt(__doc__, version='scheduler 1.2')
+  args = docopt(__doc__, version='scheduler 1.2.1')
   # We have valid args, so run the program.
   run(args)
 
