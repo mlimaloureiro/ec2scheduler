@@ -141,7 +141,7 @@ def _get_desired_state(schedule):
   stop = schedule[current_week_day]['stop']
 
   state = 'stop'
-  if current_hour >= start and current_hour <= stop:
+  if current_hour >= start and current_hour < stop:
     state = 'start'
 
   return state
@@ -181,12 +181,12 @@ def _get_instance_ids(instances):
   return instance_ids
 
 def run_cli():
-  args = docopt(__doc__, version='scheduler 1.2.1')
+  args = docopt(__doc__, version='scheduler 1.2.2')
   # We have valid args, so run the program.
   run(args)
 
 if __name__ == "__main__":
-  args = docopt(__doc__, version='scheduler 1.2.1')
+  args = docopt(__doc__, version='scheduler 1.2.2')
   # We have valid args, so run the program.
   run(args)
 
