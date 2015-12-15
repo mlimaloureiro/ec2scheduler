@@ -35,6 +35,9 @@
             },
             "instance_tags": [
                 "example-tag"
+            ],
+            "elb_names": [
+                "example-tag-elb-name"
             ]
         }
     ]
