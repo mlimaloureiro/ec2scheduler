@@ -29,7 +29,10 @@ def run(args):
   """
   config.read([args['--config'], 'aws.conf'])
   init(args)
-  schedule()
+
+  while True:
+    schedule()
+    time.sleep(600)
 
 def init(args):
   """ Setup initial configuration and connections
