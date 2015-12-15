@@ -121,7 +121,7 @@ def start_stop_instances(instances, schedule):
         print "Should stop " + instance.id + "."
         instance.stop()
       elif instance.state == 'stopped' and _get_desired_state(schedule) == 'start':
-        print "Should start " + instance.id "."
+        print "Should start " + instance.id + "."
         instance.start()
       else:
         print "Nothing to do."
@@ -181,12 +181,12 @@ def _get_instance_ids(instances):
   return instance_ids
 
 def run_cli():
-  args = docopt(__doc__, version='scheduler 1.0')
+  args = docopt(__doc__, version='scheduler 1.2')
   # We have valid args, so run the program.
   run(args)
 
 if __name__ == "__main__":
-  args = docopt(__doc__, version='scheduler 1.0')
+  args = docopt(__doc__, version='scheduler 1.2')
   # We have valid args, so run the program.
   run(args)
 
