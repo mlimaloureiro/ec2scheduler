@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """This scheduler starts/stops EC2 instances using a JSON based schedule.
- 
+
 Usage:
   scheduler [options]
   scheduler (-h | --help)
@@ -181,12 +181,11 @@ def _get_instance_ids(instances):
   return instance_ids
 
 def run_cli():
-  args = docopt(__doc__, version='scheduler 1.2.2')
+  args = docopt(__doc__, version='scheduler 1.0')
   # We have valid args, so run the program.
   run(args)
 
 if __name__ == "__main__":
-  args = docopt(__doc__, version='scheduler 1.2.2')
+  args = docopt(__doc__, version='scheduler 1.0')
   # We have valid args, so run the program.
   run(args)
-

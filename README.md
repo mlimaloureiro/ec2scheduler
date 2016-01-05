@@ -6,7 +6,7 @@ The AWS Scheduler is a script that given a set of profiles schedule the uptime o
 
 Install through pip.
 
-    pip install uniplaces-aws-scheduler
+    pip install aws-ec2-scheduler
 
 The initial configuration is done in the `aws.conf` file. Copy the `aws.conf.dist`
 to `aws.conf` and configure with the right credentials.
@@ -15,7 +15,7 @@ the directory from where you want to load the profiles.
 
 To run the scheduler just run
 
-    aws-scheduler -c path/to/config_file
+    ec2scheduler -c path/to/config_file
 
 #### Profiles
 
@@ -71,4 +71,3 @@ You can just copy the `scheduler.json.dist` and start creating your new profiles
     ]
 }
 ```
-

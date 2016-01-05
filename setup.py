@@ -1,19 +1,19 @@
 from setuptools import setup
 
-setup(name='uniplaces-aws-scheduler',
-      version='1.2.2',
+setup(name='aws-ec2-scheduler',
+      version='1.0',
       description='A scheduling script for aws ec2 instances',
-      url='https://github.com/uniplaces/uniplaces-aws-scheduler',
+      url='https://github.com/mlimaloureiro/ec2scheduler',
       author='mlimaloureiro',
-      author_email='miguel.loureiro@uniplaces.com',
+      author_email='mdiasloureiro@gmail.com',
       license='MIT',
-      packages=['awsscheduler'],
+      packages=['ec2scheduler'],
       install_requires=[
           'docopt',
           'boto'
       ],
       entry_points={
-        'console_scripts': 'aws-scheduler=awsscheduler.scheduler:run_cli'
+        'console_scripts': 'ec2scheduler=ec2scheduler.scheduler:run_cli'
       },
       include_package_data=True,
       zip_safe=False)
