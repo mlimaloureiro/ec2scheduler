@@ -1,6 +1,6 @@
-# Uniplaces AWS Scheduler
+# AWS EC2 Scheduler
 
-The AWS Scheduler is a script that given a set of profiles schedule the uptime of ec2 instances.
+The AWS EC2 Scheduler is a script that given a set of profiles schedule the uptime of ec2 instances.
 
 ## Getting Started
 
