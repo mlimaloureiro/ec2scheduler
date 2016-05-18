@@ -160,8 +160,11 @@ def reregister_elb_instances(profile):
     for elb in elbs:
       instance_ids = _get_instance_ids(elb.instances)
       print "Reregistering " + elb.name + " instances."
-      conn.deregister_instances(elb.name, instance_ids)
-      conn.register_instances(elb.name, instance_ids)
+      try:
+        conn.deregister_instances(elb.name, instance_ids)
+        conn.register_instances(elb.name, instance_ids)
+      except Exception, e:
+        print elb.name + "has no instances."
       # to avoid elb rate limit throttling
       time.sleep(1)
 
